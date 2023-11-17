@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bright Kidney Care Hospital FAQ</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #3498db;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h2 {
+      color: #3498db;
+    }
+
+    .faq-item {
+      margin-bottom: 15px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      text-align: left;
+      width: 100%;
+      outline: none;
+      transition: background-color 0.3s;
+    }
+
+    .faq-answer {
+      padding: 15px;
+      display: none;
+      background-color: #ecf0f1;
+      color: #333;
+      border-top: 1px solid #bdc3c7;
+      border-bottom: 1px solid #bdc3c7;
+    }
+
+    .faq-answer.active {
+      display: block;
+    }
+
+    .faq-question:hover {
+      background-color: #2980b9;
+    }
+
+    .get-answer-btn {
+      background-color: #3498db;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .get-answer-btn:hover {
+      background-color: #2980b9;
+    }
+
+    @keyframes slideDown {
+      from {
+        max-height: 0;
+        opacity: 0;
+      }
+
+      to {
+        max-height: 500px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        max-height: 500px;
+        opacity: 1;
+      }
+
+      to {
+        max-height: 0;
+        opacity: 0;
+      }
+    }
+
+    .faq-answer.slide-up {
+      animation: slideUp 0.3s ease-out;
+    }
+
+    .faq-answer.slide-down {
+      animation: slideDown 0.3s ease-in;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1> FAQ </h1>
+  </header>
+
+  <section>
+    <div class="faq-item">
+
+      <!-- <button class="faq-question"> -->
+      <h4><b>Q:</b>What services do you provide for kidney care?</h4>
+      </button>
+      <div class="faq-answer slide-up">
+        <p><b>A:</b>Our hospital provides a range of services including diagnostics, treatment for kidney diseases,
+          dialysis, kidney transplants, and ongoing care for patients with kidney conditions.</p>
+      </div>
+      <button class="get-answer-btn" onclick="toggleAnswer(this)">Get Answer</button>
+    </div>
+
+    <div class="faq-item">
+      <!-- <button class="faq-question"> -->
+      <h4><b>Q:</b> Can you provide information on kidney-friendly diets and lifestyle adjustments?</h4>
+      </button>
+      <div class="faq-answer slide-up">
+
+        <p>A:The average hospital stay varies depending on the condition and severity of the illness or injury.
+          Generally, the hospital stay can range from a few days to a few weeks or even months for certain cases. </p>.
+
+      </div>
+      <button class="get-answer-btn" onclick="toggleAnswer(this)">Get Answer</button>
+    </div>
+
+    <div class="faq-item">
+      <h4><b>Q:</b>Is there a diet I can follow to prevent me from having more kidney stones?</h4>
+      <div class="faq-answer slide-up">
+        <p>A: Drink 2.5-3 liters of water daily to prevent kidney stones.
+          1.Moderate intake of foods like tomato, brinjal, spinach, and meat for first-time stone formers.
+          2.Limit salt intake, avoid salty snacks, and reduce table salt use.
+          3.Avoid pickles to prevent kidney stone recurrence.
+          4.Maintain calcium intake, including milk, curd, and calcium-rich foods.
+          5.Regularly consult your doctor to follow dietary instructions and reduce stone formation by 40-50%. </p>
+      </div>
+      <button class="get-answer-btn" onclick="toggleAnswer(this)">Get Answer</button>
+    </div>
+  </section>
+
+  <script>
+    function toggleAnswer(button) {
+      const faqItem = button.parentNode;
+      const answer = faqItem.querySelector('.faq-answer');
+      answer.classList.toggle('active');
+      if (answer.classList.contains('active')) {
+        answer.classList.remove('slide-up');
+        answer.classList.add('slide-down');
+      } else {
+        answer.classList.remove('slide-down');
+        answer.classList.add('slide-up');
+      }
+    }
+  </script>
+
+</body>
+
+</html>
